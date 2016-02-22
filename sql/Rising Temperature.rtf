@@ -1,0 +1,37 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf130
+{\fonttbl\f0\froman\fcharset0 Times-Roman;\f1\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl280\sa240\partightenfactor0
+
+\f0\fs24 \cf0 \expnd0\expndtw0\kerning0
+Given a 
+\f1 Weather
+\f0  table, write a SQL query to find all dates' Ids with higher temperature compared to its previous (yesterday's) dates.\
+\pard\pardeftab720\sl280\partightenfactor0
+
+\f1 \cf0 +---------+------------+------------------+\
+| Id(INT) | Date(DATE) | Temperature(INT) |\
++---------+------------+------------------+\
+|       1 | 2015-01-01 |               10 |\
+|       2 | 2015-01-02 |               25 |\
+|       3 | 2015-01-03 |               20 |\
+|       4 | 2015-01-04 |               30 |\
++---------+------------+------------------+\
+
+\f0 For example, return the following Ids for the above Weather table:\
+
+\f1 +----+\
+| Id |\
++----+\
+|  2 |\
+|  4 |\
++----+\
+\
+\
+# Write your MySQL query statement below\
+\
+Select w1.Id FROM Weather w1, Weather w2\
+WHERE w1.Temperature > w2.Temperature AND \
+TO_DAYS(w1.DATE)-TO_DAYS(w2.DATE)=1;}
