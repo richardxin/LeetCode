@@ -5,8 +5,7 @@ public class TreeUtil {
 		/*
 		 * given sorted array with unique integer, create BST(binary search tree) with minimal height
 		 * 
-		 */
-		
+		 */		
 		if (start>end) return null;
 		int mid = (start+end)/2;
 		TreeNode<Integer> n = new TreeNode<Integer>(arr[mid]);
