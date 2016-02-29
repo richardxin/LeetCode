@@ -18,5 +18,7 @@ public class App
     	
     	arr1 = Arrays.copyOf(arr1, count);
     	System.out.println(Arrays.toString(arr1));
+    	System.out.println(IntegerToWords.numberToWords(18766656));
+
     }
 }
