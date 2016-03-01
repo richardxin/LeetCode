@@ -1,7 +1,9 @@
 package richardxin.leetcode;
 
+import java.util.LinkedList;
+
 public class LinkedListUtil {
-	public ListNode<Integer> getOddEvenSorted(ListNode<Integer> head){
+	public static ListNode<Integer> getOddEvenSorted(ListNode<Integer> head){
 		/*
 		 * 328. Odd Even Linked List
 		 * 
@@ -30,5 +32,11 @@ public class LinkedListUtil {
 			p= p.next;			
 		}
 		return head;		
+	}
+	
+	public static void deleteDups(ListNode node){
+		/*
+		 * Remove duplicates from an unsorted linked list
+		 */
 	}
 }
