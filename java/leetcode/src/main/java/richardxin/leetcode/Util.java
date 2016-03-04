@@ -3,8 +3,12 @@ package richardxin.leetcode;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Util {
+	private final static Pattern NUMERIC = Pattern.compile("[-+]?\\d*\\.?\\d+");
+	
 	public static boolean containsDuplicate(int[] nums) {
 		/*
 		 * #217. Contains Duplicate
@@ -96,5 +100,32 @@ public class Util {
 	    if(right>0){
 	        dfs(result, s+")", left, right-1);
 	    }
+	}
+	
+	public static boolean isNumber(String s) {
+		/*
+		 * Validate if a given string is numeric.
+		 * Some examples:
+		 * "0" => true
+		 * " 0.1 " => true
+		 * "abc" => false
+		 * "1 a" => false
+		 * "2e10" => true
+		 * 
+		 */
+		if (s.trim().isEmpty())
+			return false;
+		String regex = "[-+]?(\\d+\\.?|\\.\\d+)\\d*(e[-+]?\\d+)?";
+		if (s.trim().matches(regex))
+			return true;
+		else
+			return false;
+    }
+	
+	public static boolean isNumeric(String s) {
+	    //return s.matches("[-+]?\\d*\\.?\\d+");
+		Matcher m = NUMERIC.matcher(s);
+		return m.find();		
+		//return Pattern.matches(regex, input)
 	}
 }

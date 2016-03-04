@@ -1,4 +1,4 @@
-package richardxin.leetcode;
+package richardxin.scratchpad;
 
 import java.util.LinkedList;
 

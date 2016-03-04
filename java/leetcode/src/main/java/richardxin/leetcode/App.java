@@ -3,6 +3,8 @@ package richardxin.leetcode;
 import java.util.Arrays;
 import java.util.PriorityQueue;
 
+import richardxin.scratchpad.GsonTest;
+
 public class App 
 {
     public static void main( String[] args )
@@ -23,6 +25,10 @@ public class App
     	
     	System.out.println(Util.generateParenthesis(4));
     	demoPriorityQueue();
+    	
+    	System.out.println(Util.isNumeric("1234.56"));
+    	
+    	GsonTest.testTypeToken();
 
     }
     
