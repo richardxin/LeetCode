@@ -3,7 +3,8 @@ package richardxin.leetcode;
 import java.util.Arrays;
 import java.util.PriorityQueue;
 
-import richardxin.scratchpad.GsonTest;
+import richardxin.scratchpad.GuavaTest;
+
 
 public class App 
 {
@@ -28,7 +29,7 @@ public class App
     	
     	System.out.println(Util.isNumeric("1234.56"));
     	
-    	GsonTest.testTypeToken();
+    	GuavaTest.testReflection();;
 
     }
     
