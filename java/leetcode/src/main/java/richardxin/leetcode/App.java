@@ -1,14 +1,17 @@
 package richardxin.leetcode;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.PriorityQueue;
 
+import richardxin.scratchpad.ComparatorTest;
 import richardxin.scratchpad.GuavaTest;
+import richardxin.scratchpad.Java8;
 
 
 public class App 
 {
-    public static void main( String[] args )
+    public static void main( String[] args ) throws IOException
     {
     	int[] arr = { 1, 2, 2, 3, 3 };
     	arr = ArrayUtil.removeDuplicates(arr);
@@ -29,7 +32,13 @@ public class App
     	
     	System.out.println(Util.isNumeric("1234.56"));
     	
-    	GuavaTest.testReflection();;
+    	GuavaTest.testReflection();
+    	
+    	Java8.test_map_filter();
+    	Java8.test_flatmap();
+    	Java8.wordcount();
+    	
+    	ComparatorTest.testSort();
 
     }
     

@@ -1,9 +1,17 @@
 package richardxin.scratchpad;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
+import com.google.common.base.Joiner;
+import com.google.common.base.Splitter;
 import com.google.gson.Gson;
-
+/**
+ * 
+ * http://code.google.com/p/guava-libraries/
+ *
+ */
 public class GuavaTest {
 	
 	public static void testReflection(){
@@ -21,11 +29,31 @@ public class GuavaTest {
         		+ "]";
         java.lang.reflect.Type listType = new com.google.common.reflect.TypeToken<List<Result>>() {}.getType();
         Gson gson = new Gson();
+        // use case: mock data for unit test
         List<Result> expectedResults =  gson.fromJson(expectedResponse, listType);
         System.out.println(expectedResults.size());
         for (Result r : expectedResults){
         	System.out.println(r.id + ":" + r.title);
         }
 	}
-
+	
+	public static void testSplitter(){
+		String str = "a,,b,     c,,,d,e   ,   f    ";
+		Iterable<String> result = Splitter.on(',')
+				.trimResults()
+				.omitEmptyStrings()
+				.split(str);
+		
+		Map<String, String> join = Splitter.on("&").withKeyValueSeparator("=").split("user_id=123&name=tony");
+		//Map of {id=123, name=green}
+	}
+	
+	public static void testJoiner(){
+		List<String> lst = Arrays.asList("1", "2", null, "3", "4");
+		String result =  Joiner
+                .on(",")
+                .skipNulls()
+                .join(lst);
+		//result = "1,2,3,4"
+	}
 }
